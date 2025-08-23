@@ -109,22 +109,25 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
-// Toggle menu on mobile
+// -----------------------
+// Mobile Menu Toggle
+// -----------------------
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
-// Toggle menu when clicking ☰
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
+if (menuToggle && navLinks) {
+  // Toggle when ☰ is clicked
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");  // use .active
 
-// Optional: close menu when a link is clicked (better on phones)
-const links = navLinks.querySelectorAll("a");
-links.forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
   });
-});
+
+  // Close menu when a link is clicked (useful on phones)
+  const links = navLinks.querySelectorAll("a");
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");  //  use .active
+    });
+  });
+}
+
