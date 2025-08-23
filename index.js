@@ -116,3 +116,15 @@ const navLinks = document.getElementById("navLinks");
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("show");
 });
+// Toggle menu when clicking ☰
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+// Optional: close menu when a link is clicked (better on phones)
+const links = navLinks.querySelectorAll("a");
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+});
