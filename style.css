@@ -104,46 +104,43 @@ h2::after {
   opacity: 1;
 }
 
-/* Navbar */
+/* Navbar Container */
+.navbar {
+  background: var(--dark-bg);
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--bright-blue);
+}
+/* Sticky Navbar */
 header {
   background-color: var(--navy-blue-light);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
   z-index: 1000;
 }
-
-nav {
+/* Navbar Links */
+.nav-links {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 15px 20px;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--bright-blue);
-  text-shadow: 0 0 5px var(--bright-blue-glow);
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
   gap: 30px;
+  list-style: none;
 }
 
-nav ul li a {
+.nav-links li a {
   font-weight: 500;
   transition: color 0.3s;
   position: relative;
 }
 
-nav ul li a::after {
+.nav-links li a::after {
   content: '';
   position: absolute;
   bottom: -5px;
@@ -155,12 +152,44 @@ nav ul li a::after {
   box-shadow: 0 0 5px var(--bright-blue-glow);
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
   color: var(--bright-blue);
 }
 
-nav ul li a:hover::after {
+.nav-links li a:hover::after {
   width: 100%;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: var(--bright-blue);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;               /* <-- Hidden by default */
+    flex-direction: column;
+    background: var(--dark-bg);
+    position: absolute;
+    top: 70px;
+    right: 10%;
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+
+  .nav-links.active {
+    display: flex;               /* <-- Show when toggled */
+  }
+
+  .menu-toggle {
+    display: block;              /* <-- Hamburger shows */
+  }
 }
 
 /* Hero Section */
