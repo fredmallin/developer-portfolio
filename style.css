@@ -657,7 +657,7 @@ footer {
     padding: 15px;
     border-radius: 8px;
   }
-  .nav-links.show {
+  .nav-links.active {
     display: flex;
   }
   .menu-toggle {
