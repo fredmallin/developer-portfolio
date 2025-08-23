@@ -125,6 +125,6 @@ menuToggle.addEventListener("click", () => {
 const links = navLinks.querySelectorAll("a");
 links.forEach(link => {
   link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
+    navLinks.classList.remove("show");
   });
 });
