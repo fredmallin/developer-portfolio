@@ -118,7 +118,7 @@ menuToggle.addEventListener("click", () => {
 });
 // Toggle menu when clicking ☰
 menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
+  navLinks.classList.toggle("show");
 });
 
 // Optional: close menu when a link is clicked (better on phones)
